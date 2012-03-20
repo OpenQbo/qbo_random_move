@@ -30,7 +30,7 @@ import threading
 from lib_qbo_pyarduqbo import qbo_control_client
 #from lib_qbo_talk_py import qbo_talk_client
 from qbo_talk.srv import Text2Speach
-from qbo_face_tracking.msg import FacePosAndSize
+from qbo_face_msgs.msg import FacePosAndDist
 
 from time import sleep
 from random import choice, uniform
@@ -49,7 +49,7 @@ def say(text):
     global talking_flag
     if not talking_flag:
         talking_flag=True
-        festivalCommand = rospy.ServiceProxy('/Qbo/festivalSay', Text2Speach)
+        festivalCommand = rospy.ServiceProxy('/qbo_talk/festival_say', Text2Speach)
         resp1 = festivalCommand(text)
         #self.qbo_talk_controller.say('sentence':text)
         #print 'termino de hablar'
@@ -83,7 +83,7 @@ class qbo_random_move():
         self.uniform_lineal_speed_change=0.05
         #self.talking=False
         self.sentences=['Ups','A can not pass though a wall','I will brake this wall. Can anyone put a cannon on me?','Atom, can you help me with this wall?', 'Oh my God. I am gonna crash', 'I shall not pass']
-        rospy.Subscriber("/qbo_face_tracking/face_pos_and_size", FacePosAndSize, face_callback)
+        rospy.Subscriber("/qbo_face_tracking/face_pos_and_size", FacePosAndDist, face_callback)
 
 
     def spin(self):

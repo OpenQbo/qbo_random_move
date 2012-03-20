@@ -43,7 +43,7 @@ def say(text):
     global talking_flag
     if not talking_flag:
         talking_flag=True
-        festivalCommand = rospy.ServiceProxy('/Qbo/festivalSay', Text2Speach)
+        festivalCommand = rospy.ServiceProxy('/qbo_talk/festival_say', Text2Speach)
         resp1 = festivalCommand(text)
         #self.qbo_talk_controller.say('sentence':text)
         #print 'termino de hablar'
