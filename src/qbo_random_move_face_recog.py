@@ -123,14 +123,14 @@ class qbo_random_move():
         self.lineal_speed=0.0
         self.angular_speed=0.0
         self.turn_time=0.1
-        self.wall_distance_limit=0.8
+        self.wall_distance_limit=0.3
         self.last_turn_direction=False #True means left
         self.bad_word_said=False
         self.uniform_lineal_speed_change=0.05
         #self.talking=False
         self.sentences=['Ups','A can not pass though a wall','I will brake this wall. Can anyone put a cannon on me?','Atom, can you help me with this wall?', 'Oh my God. I am gonna crash', 'I shall not pass']
 
-       	rospy.Subscriber("/qbo_face_tracking/face_pos_and_size", FacePosAndDist, face_callback)
+       	rospy.Subscriber("/qbo_face_tracking/face_pos_and_dist", FacePosAndDist, face_callback)
 	rospy.Subscriber("/listen/en_default", Listened, listen_callback)
 
     def spin(self):

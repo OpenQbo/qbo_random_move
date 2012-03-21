@@ -77,7 +77,7 @@ class qbo_random_move():
         self.lineal_speed=0.0
         self.angular_speed=0.0
         self.turn_time=0.1
-        self.wall_distance_limit=0.5
+        self.wall_distance_limit=0.3
         self.last_turn_direction=False #True means left
         self.bad_word_said=False
         self.uniform_lineal_speed_change=0.05
