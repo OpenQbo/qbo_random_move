@@ -123,7 +123,7 @@ class qbo_random_move():
         self.lineal_speed=0.0
         self.angular_speed=0.0
         self.turn_time=0.1
-        self.wall_distance_limit=0.3
+        self.wall_distance_limit=0.2
         self.last_turn_direction=False #True means left
         self.bad_word_said=False
         self.uniform_lineal_speed_change=0.05
@@ -227,7 +227,7 @@ class qbo_random_move():
                     #t = threading.Thread(target=say, args=(choice(self.sentences), )) #[randint(0,len(self.sentences)-1)], ))
                     #t.start()
                     bad_word_said=True
-                self.turn_time=0.3+uniform(-0.1,0.1)
+                self.turn_time=0.1+uniform(-0.05,0.05)
             else:
                 bad_word_said=False
                 self.turn_time=0.1
